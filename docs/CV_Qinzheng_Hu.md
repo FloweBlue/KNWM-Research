@@ -1,6 +1,6 @@
 # Qinzheng Hu
 
-> Research-oriented MSc Software Development student at the University of Glasgow, with a strong interest in world models, artificial general intelligence, and AI for Science. My current research focuses on developing world models capable of learning, representing, and applying knowledge for physical prediction and scientific reasoning. I have conducted independent research across world modeling, deep learning, and cybersecurity, with one published paper, one accepted conference paper, and a third paper on a novel knowledge-neuron architecture for world modeling currently under review at ICLR 2027.
+Research-oriented MSc Software Development student at the University of Glasgow, with a strong interest in world models, artificial general intelligence, and AI for Science. My current research focuses on developing world models capable of learning, representing, and applying knowledge for physical prediction and scientific reasoning. I have conducted independent research across world modeling, deep learning, and cybersecurity, with one published paper, one accepted conference paper, and a third paper on a novel knowledge-neuron architecture for world modeling currently under review at ICLR 2027.
 
 ---
 
@@ -32,14 +32,11 @@ Suzhou University of Science and Technology, Suzhou, China
 
 ## Technical Skills
 
-### AI Methods & Technologies
-World Models | Machine Learning | Deep Learning | LLMs | Scientific Discovery | Symbolic Regression | Causal Reasoning
+**AI Methods & Technologies:** World Models | Machine Learning | Deep Learning | LLMs | Scientific Discovery | Symbolic Regression | Causal Reasoning
 
-### Programming Languages
-Python | Java | SQL
+**Programming Languages:** Python | Java | SQL
 
-### ML / Research Tools
-PyTorch | scikit-learn | NumPy | Pandas | GitHub | PostgreSQL
+**ML / Research Tools:** PyTorch | scikit-learn | NumPy | Pandas | GitHub | PostgreSQL
 
 ---
 
