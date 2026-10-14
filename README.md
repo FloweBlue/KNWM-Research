@@ -54,9 +54,9 @@ This repository contains the following materials:
 
 | File | Description |
 |------|-------------|
-| [Research Overview](KNWM_Research_Overview.pdf) | KNWM architecture, knowledge-neuron structure, reasoning mechanisms, and experimental results. |
-| [Academic CV](Qinzheng_Hu_CV.pdf) | My academic background, publications, and research experience. |
-| [Demo Video](KNWM_Demo.mp4) | A demonstration of the KNWM system and its implemented capabilities. |
+| [Research-Experience](Research-Experience.md) | KNWM architecture, knowledge-neuron structure, reasoning mechanisms, and experimental results. |
+| [CV](CV.md) | My academic background, publications, and research experience. |
+| [Demo](Demo.mp4) | A demonstration of the KNWM system and its implemented capabilities. |
 
 ## Research Directions
 
