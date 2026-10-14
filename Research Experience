@@ -1,427 +1,279 @@
-# Previous Research: Knowledge-Neuron World Model (KNWM)
+# Knowledge-Neuron World Model
 
-**Researcher:** Qinzheng Hu  
-**Research Period:** May 2026 – Present  
-**Research Type:** Independent Research  
-**Paper:** KNWM: A Knowledge-Neuron Architecture for World Modeling  
-**Status:** Under Review at ICLR 2027
+# (KNWM)
 
 ---
 
-## 1. Research Overview
+**Independent Research Project | Qinzheng Hu**
 
-I independently designed and developed the Knowledge-Neuron World Model (KNWM), a world model that learns, organizes, and reuses knowledge for reasoning, prediction, complex problem-solving, and autonomous planning.
+**Paper Status: Under Review at ICLR 2027**
 
-The system is designed to support knowledge across different domains, particularly physics, mathematics, and computer science.
+---
 
-Unlike systems that primarily rely on language models for reasoning, KNWM uses an explicit knowledge-neuron architecture. Learned knowledge is organized into structured neurons connected through shared semantic elements.
+## Overview
 
-This allows the system to activate, combine, and execute previously learned knowledge when solving new problems.
+KNWM (Knowledge-Neuron World Model) is a world model that I independently designed and developed.
 
-My research focuses on three main questions:
+The goal of KNWM is to enable AI systems to learn, organize, and reuse knowledge across different domains, particularly physics, mathematics, and computer science.
+
+Unlike approaches that primarily depend on language models for reasoning, KNWM uses an explicit knowledge-neuron architecture to support knowledge learning, memory, logical reasoning, complex problem-solving, physical prediction, and autonomous planning.
+
+The core idea is simple but ambitious: build an AI system that can store knowledge in structured, reusable forms, activate relevant knowledge when a task appears, and combine multiple knowledge pieces to solve new problems.
+
+My research focuses on three central questions:
 
 1. How can AI independently learn and accumulate reusable knowledge?
-2. How can learned knowledge be connected and combined to solve complex problems?
+2. How can learned knowledge be connected and composed to solve complex problems?
 3. How can accumulated knowledge support prediction, reasoning, and autonomous planning?
 
 ---
 
-## 2. Knowledge-Neuron Architecture
+## 1. Knowledge-Neuron Architecture
 
-The core contribution of KNWM is its structured knowledge-neuron architecture.
+The central contribution of KNWM is its structured knowledge-neuron architecture.
 
-Knowledge is not simply stored as unstructured text. Instead, KNWM organizes learned information into persistent, executable knowledge structures.
+Knowledge is not stored only as unstructured text or latent vectors. Instead, KNWM organizes learned information into persistent knowledge structures, which are represented as knowledge neurons.
 
-### 2.1 Recursive Knowledge-Neuron Structure
+Each knowledge neuron contains structured information such as:
 
-Each knowledge neuron contains structured information, including:
+- identity
+- knowledge type
+- knowledge provenance
+- validation status
+- properties
+- mathematical expressions
+- relationships
+- applicability conditions
 
-- Identity
-- Knowledge type
-- Knowledge provenance
-- Validation information
-- Properties
-- Mathematical expressions
-- Relationships
-- Applicability conditions
+This design allows the system to keep knowledge in a form that is both interpretable and reusable.
 
-Knowledge neurons use named slots to organize their contents.
+### Recursive Structure
 
-These slots can contain basic knowledge elements or references to other knowledge neurons, allowing more complex knowledge structures to be built recursively.
+Knowledge neurons can contain both basic knowledge and references to other neurons.
 
-### 2.2 Basic and Composite Knowledge
+This creates a recursive structure in which simple facts can be organized into more complex scientific or logical knowledge.
 
-KNWM distinguishes between basic and composite knowledge.
+For example, basic elements such as mass, distance, time, velocity, and acceleration can be combined into higher-level concepts such as causal relationships, physical rules, or mathematical constraints.
 
-**Basic Knowledge**
+### Basic and Composite Knowledge
 
-Basic knowledge consists of independent semantic elements, such as:
+KNWM distinguishes between two types of knowledge:
 
-- Mass
-- Distance
-- Time
-- Velocity
-- Acceleration
+- Basic knowledge: independent semantic elements
+- Composite knowledge: combinations of multiple elements or relations
 
-These elements provide the foundation for more complex knowledge representations.
+Composite knowledge can represent:
 
-**Composite Knowledge**
+- mathematical relationships
+- causal dependencies
+- physical laws
+- event transitions
+- reasoning procedures
 
-Composite knowledge combines multiple knowledge elements or references to other neurons.
-
-Examples include:
-
-- Mathematical relationships
-- Physical laws
-- Event processes
-- Complex problem-solving procedures
-
-This recursive structure allows KNWM to construct more complex knowledge from previously learned components.
-
-### 2.3 Knowledge Connections
-
-I designed a connection mechanism that links knowledge neurons through shared semantic elements.
-
-These connections allow relevant knowledge to be activated and combined during reasoning.
-
-Knowledge tokens are basic or selected composite knowledge units that participate in semantic signal transmission.
-
-They are different from the text tokens used by conventional language models.
-
-The purpose of this architecture is to enable knowledge reuse, multi-step reasoning, and structured knowledge composition.
+This recursive combination mechanism is essential for supporting multi-step reasoning and knowledge reuse.
 
 ---
 
-## 3. Three Functional Types of Knowledge Neurons
+## 2. Three Functional Types of Knowledge Neurons
 
 KNWM includes three main functional types of knowledge neurons.
 
-### 3.1 Scientific Knowledge Neurons
+### Scientific Knowledge Neurons
 
-Scientific knowledge neurons represent quantitative relationships and executable scientific knowledge.
+These neurons represent quantitative relationships and executable scientific knowledge.
 
 They can contain:
 
-- Mathematical formulas
-- Physical laws
-- Quantitative relationships
-- Applicability conditions
-- Executable calculations
+- formulas
+- laws of nature
+- quantitative constraints
+- validity conditions
+- executable calculation rules
 
-These neurons allow KNWM to use previously learned mathematical and physical knowledge directly when solving problems.
+These neurons allow KNWM to use prior scientific knowledge when solving problems involving mathematics or physics.
 
-Scientific knowledge is also organized into multiple layers:
+### Event Knowledge Neurons
 
-1. Properties
-2. Causal Relationships
-3. Mathematical Patterns
-4. Knowledge Composition
-5. Physical Laws
+These neurons encode actions, events, and their effects on the environment.
 
-This layered structure supports the learning and combination of increasingly complex scientific relationships.
+They include:
 
-### 3.2 Event Knowledge Neurons
+- preconditions
+- state transitions
+- resource requirements
+- effects
+- subevents
 
-Event knowledge neurons represent actions, events, and their effects on the environment.
+They are especially useful for planning because they describe how one state can turn into another after an action occurs.
 
-They contain information such as:
+### Problem Knowledge Neurons
 
-- Action preconditions
-- State transitions
-- Resource requirements
-- Event effects
-- Subevents
+These neurons represent tasks, subproblems, and objective structures.
 
-These neurons help KNWM simulate possible actions and understand how different events affect the current state.
+They contain:
 
-They are particularly important for autonomous planning.
+- known facts
+- goals
+- constraints
+- target states
+- intermediate subproblems
 
-### 3.3 Problem Knowledge Neurons
+This allows KNWM to understand the structure of a task and to organize reasoning or planning around a concrete objective.
 
-Problem knowledge neurons represent the structure of problems and tasks.
-
-They organize information such as:
-
-- Known facts
-- Problem goals
-- Constraints
-- Target states
-- Subproblems
-
-These neurons help KNWM identify the requirements of a task and organize the reasoning or planning process.
-
-### 3.4 Combining the Three Types
-
-The three types of knowledge neurons work together.
-
-Scientific knowledge neurons provide mathematical and physical calculations.
-
-Event knowledge neurons describe possible actions and their consequences.
-
-Problem knowledge neurons represent objectives, constraints, and intermediate goals.
-
-By activating and combining these neurons, KNWM can construct reasoning chains and generate plans for different problems.
+Together, the three types of knowledge neurons provide a unified knowledge system for scientific reasoning, simulation, and planning.
 
 ---
 
-## 4. Overall KNWM Architecture
+## 3. Overall KNWM Architecture
 
-The overall system contains two closely connected processes:
+The overall system contains two closely connected capabilities:
 
-1. Knowledge Learning and Memory
-2. Task-Driven Knowledge Use
+1. Knowledge learning and memory
+2. Task-driven knowledge use
 
-### 4.1 Knowledge Learning and Memory
+### Knowledge Learning and Memory
 
-The knowledge learning process follows four main stages:
+KNWM follows a learning loop of:
 
-**Observe → Discover → Validate → Store**
+Observe → Discover → Validate → Store
 
-#### Observe
+- Observe: collect environmental or experimental data
+- Discover: infer candidate relationships
+- Validate: test whether the relationship holds under appropriate conditions
+- Store: place the validated relationship into the knowledge base
 
-KNWM collects information about objects, properties, and observed relationships.
+This process allows the system to gradually build a stable internal knowledge base.
 
-Controlled interventions can also be used to investigate how changes in one variable affect other variables.
+### Task-Driven Knowledge Use
 
-#### Discover
+When a task is given, KNWM executes a reasoning process:
 
-The system identifies candidate relationships from observations and experiments.
+Task and Goals → Knowledge Activation → Computation and Simulation → Prediction and Planning
 
-These relationships may include mathematical expressions, causal dependencies, or scientific formulas.
-
-#### Validate
-
-Candidate knowledge is tested to determine its accuracy and applicability.
-
-Only knowledge that meets the relevant validation conditions is accepted for storage or reuse.
-
-#### Store
-
-Validated knowledge is organized into knowledge neurons and stored in the knowledge base.
-
-Connections between related knowledge neurons allow previously learned knowledge to support future tasks.
-
-### 4.2 Task-Driven Knowledge Use
-
-When KNWM receives a problem, it follows a task-driven reasoning process:
-
-**Task and Goals → Knowledge Activation → Computation and Simulation → Prediction and Planning**
-
-#### Task and Goals
-
-The system identifies the known conditions, constraints, and target of the problem.
-
-#### Knowledge Activation
-
-KNWM searches for applicable knowledge and identifies the relationships and dependencies needed to solve the task.
-
-#### Computation and Simulation
-
-The system executes relevant mathematical relationships and simulates possible events.
-
-#### Prediction and Planning
-
-KNWM compares predicted outcomes or candidate plans and selects solutions according to the task requirements.
-
-Feedback from predictions and actions can also support subsequent learning and knowledge updates.
+The system identifies the relevant facts, searches for applicable relations, activates relevant knowledge neurons, and then performs reasoning or planning using the selected knowledge.
 
 ---
 
-## 5. Complex Problem-Solving
+## 4. Complex Problem-Solving
 
-KNWM is not limited to knowledge learning or autonomous planning.
+KNWM is designed not only to memorize knowledge but also to use it to solve multi-step complex problems.
 
-It can also solve structured, multi-step problems by combining previously learned mathematical and scientific knowledge.
+The problem-solving process includes:
 
-### 5.1 Goal-Directed Reasoning
+### Step 1: Identify Facts and Goals
 
-The problem-solving process includes three main stages.
+The system detects known conditions, target variables, and constraints.
 
-**Step 1: Identify Facts and Goals**
+### Step 2: Resolve Knowledge Dependencies
 
-KNWM identifies the available information, including:
+It infers which relationships or formulas are required to reach the goal.
 
-- Known quantities
-- Objects
-- Units
-- Conditions
-- Target variables
+### Step 3: Execute a Reasoning Chain
 
-**Step 2: Resolve Knowledge Dependencies**
+It combines multiple knowledge units into a sequence of computations or logical steps.
 
-The system reasons backward from the target to determine which relationships are needed.
+This enables KNWM to construct solutions rather than simply retrieve a prewritten answer.
 
-Relevant knowledge neurons are selected based on their applicability conditions and dependencies.
-
-**Step 3: Execute a Reasoning Chain**
-
-KNWM combines mathematical formulas and operations into a multi-step solution.
-
-Intermediate values can be preserved and checked during the calculation process.
-
-### 5.2 Knowledge Composition
-
-A major feature of KNWM is its ability to combine multiple knowledge relationships.
-
-Instead of retrieving a previously written answer, KNWM can construct a solution by connecting applicable knowledge neurons.
-
-For example, when a problem requires several mathematical or physical relationships, the system can identify the dependencies between them and execute the corresponding calculations.
-
-This mechanism allows learned knowledge to be reused across different problem-solving tasks.
+A major advantage of this approach is its ability to recombine previously learned knowledge for different tasks.
 
 ---
 
-## 6. Autonomous Planning
+## 5. Autonomous Planning
 
 KNWM also supports event-based autonomous planning.
 
-The planning process is based on scientific, event, and problem knowledge neurons.
+In this setting, scientific knowledge neurons provide the mathematical and physical relationships used to evaluate possible actions, while event knowledge neurons represent potential actions and their effects.
 
-### 6.1 Planning Process
+The planning process follows this structure:
 
-**Step 1: Define the Goal and Current State**
+1. define the goal and current state
+2. identify applicable events
+3. simulate possible outcomes
+4. estimate costs or constraints
+5. compare candidate plans
+6. revise the plan according to feedback
 
-Problem knowledge neurons identify the objective and constraints.
-
-**Step 2: Identify Applicable Events**
-
-Event knowledge neurons provide possible actions, together with their preconditions, resource requirements, and expected effects.
-
-**Step 3: Simulate Outcomes and Calculate Costs**
-
-Scientific knowledge neurons provide the mathematical and physical relationships needed to evaluate candidate actions.
-
-KNWM can simulate possible state changes and estimate their associated costs.
-
-**Step 4: Compare Candidate Plans**
-
-The system compares feasible planning paths and selects a suitable solution.
-
-New observations and feedback can be used to revise the current plan.
-
-### 6.2 Knowledge-Driven Planning
-
-The planning process does not require an LLM to generate the planner.
-
-KNWM uses its own structured knowledge representation, knowledge activation, event simulation, and search mechanisms to construct plans.
-
-The same mathematical and physical knowledge used for problem-solving can also contribute to planning decisions.
-
-This provides a connection between knowledge learning, mathematical reasoning, prediction, and autonomous action.
+This makes KNWM capable of knowledge-driven planning rather than relying on a language model to generate the entire planner from scratch.
 
 ---
 
-## 7. Experimental Results
+## 6. Experimental Results
 
-The ICLR 2027 submission includes several controlled experiments evaluating KNWM's knowledge learning, reasoning, prediction, and planning capabilities.
+The KNWM work includes a set of controlled experiments designed to evaluate knowledge learning, compositional reasoning, prediction, and planning.
 
-The following results come from different evaluation settings and should not be interpreted as a single overall success rate.
+### Complex Physics Problem-Solving
 
-### 7.1 Complex Physics Problem-Solving
+Result: 82 / 93
 
-**Result: 82 / 93**
+KNWM solved 82 of 93 selected physics problems under controlled evaluation conditions.
 
-KNWM produced correct answers for 82 out of 93 selected physics problems, as confirmed by project-internal review.
+### Compositional Reasoning
 
-These experiments used manually assisted structured inputs.
+Result: 300 / 300
 
-Therefore, the result does not represent end-to-end natural-language problem-solving accuracy.
+KNWM successfully completed 300 controlled multi-step knowledge composition tasks.
 
-### 7.2 Compositional Reasoning
+### Planning Performance
 
-**Result: 300 / 300**
+Result: 17 vs. 6 optimal plans out of 24 tasks
 
-KNWM successfully completed 300 controlled multi-step knowledge-composition tasks.
+With validated knowledge reuse, KNWM produced more optimal plans than the condition without such reuse.
 
-The experiments evaluated its ability to connect and execute multiple knowledge relationships.
+### Scientific Law Learning
 
-A matched symbolic comparator also successfully completed all 300 tasks.
+Result: 40 / 40
 
-This result supports the feasibility of KNWM's compositional reasoning mechanism under the evaluated conditions.
+The system successfully learned 40 scientific relationships in the evaluation setting.
 
-### 7.3 Knowledge-Driven Planning
+### Trajectory Prediction
 
-**Result: 17 vs. 6 optimal plans out of 24 tasks**
+Result: 6,000 / 6,000 checkpoints
 
-The planning experiments compared two conditions:
+KNWM completed 6,000 prediction checkpoints across 200 evaluated trajectories under the provided motion laws.
 
-- With validated knowledge learning and reuse: 17 optimal plans.
-- Without reuse of newly learned knowledge: 6 optimal plans.
-
-Both conditions produced feasible plans in the evaluated tasks.
-
-The result shows that validated knowledge reuse can improve planning decisions under the tested conditions.
-
-### 7.4 Scientific Law Learning
-
-**Result: 40 / 40**
-
-KNWM learned 40 scientific relationships in the controlled evaluation.
-
-The learned relationships were validated using independent parameter ranges and reused after storage.
-
-### 7.5 Trajectory Prediction
-
-**Result: 6,000 / 6,000 checkpoints**
-
-The system completed 6,000 evaluated prediction checkpoints across 200 independent trajectories.
-
-These experiments used supplied motion laws.
-
-The result demonstrates the ability to execute and reuse available physical relationships for trajectory prediction under the specified experimental conditions.
+These results support the feasibility of the architecture under structured experimental settings, while also clarifying the limits of the current evaluation framework.
 
 ---
 
-## 8. Current Research Extensions
+## 7. Current Research Extensions
 
-I am continuing to develop KNWM beyond the experiments reported in the ICLR submission.
+I am continuing to extend KNWM in multiple directions.
 
-### 8.1 LLM–KNWM Integration
+### LLM–KNWM Integration
 
-I have developed an initial AGI-oriented system combining KNWM with an LLM.
+I developed an initial AGI-oriented system that combines KNWM with an LLM.
 
 In this architecture:
 
-- The LLM primarily handles language input and output.
-- KNWM handles knowledge, memory, reasoning, and planning.
+- the LLM mainly handles language input and output
+- KNWM handles knowledge, memory, reasoning, and planning
 
-The system also includes an initial capability-expansion mechanism.
+This provides an initial mechanism for capability expansion, where KNWM can identify missing capabilities, guide code creation, test the result, and retain newly learned capabilities for future use.
 
-When an existing capability is insufficient, KNWM can plan a possible solution, guide code development and testing, and retain newly developed capabilities for later use.
+### 3D Perception
 
-### 8.2 3D Perception
+I am also exploring ways to connect KNWM with 3D visual perception so that structured observations can be integrated into the knowledge system.
 
-I am improving KNWM's ability to obtain structured information from visual observations.
+### Embodied Planning
 
-The goal is to connect 3D perception with the existing knowledge-neuron architecture.
+Another direction is to apply KNWM to embodied intelligence and adaptive planning under changing environmental conditions.
 
-This would allow the system to use observed physical states for further reasoning and planning.
-
-### 8.3 Embodied Planning
-
-Another research direction is applying KNWM's existing knowledge-driven planning mechanisms to embodied intelligence.
-
-I am interested in how mathematical and physical knowledge can support planning under changing environmental conditions and safety constraints.
-
-These are ongoing research directions, not claims of completed real-world robotic deployment.
+These are ongoing research directions, not claims of fully deployed real-world robotic systems.
 
 ---
 
-## 9. Other Research Experience
+## 8. Related Research
 
-In addition to KNWM, I have worked on machine learning and cybersecurity research.
+In addition to KNWM, I have conducted related work in machine learning and cybersecurity.
 
-**Hierarchical Detection of Malicious Command Lines Using Random Forest and Context-Aware LSTM**
+- Hierarchical Detection of Malicious Command Lines Using Random Forest and Context-Aware LSTM
+- Stock Price Prediction Based on Deep Learning
 
-Accepted at Cyber Science 2026.
-
-**Stock Price Prediction Based on Deep Learning**
-
-Published in the Academic Journal of Computing & Information Science, 2024.
+These studies have strengthened my interest in building AI systems that can reason, make predictions, and operate under uncertain real-world conditions.
 
 ---
 
-## 10. Publication
+## 9. Publication
 
 **Qinzheng Hu**
 
@@ -431,15 +283,10 @@ Under Review at ICLR 2027.
 
 ---
 
-## Research Scope and Limitations
+## Conclusion
 
-The reported experiments were conducted under specified controlled conditions.
+KNWM is designed to move beyond purely language-driven reasoning by building a structured, reusable, and executable knowledge system.
 
-In particular:
+My work aims to support scientific understanding, prediction, knowledge reuse, problem-solving, and autonomous planning through a knowledge-neuron architecture.
 
-- The physics problem-solving evaluation used manually assisted structured inputs.
-- The knowledge-composition experiments were also completed by a matched symbolic comparator.
-- The trajectory prediction experiments used supplied motion laws.
-- The current research does not establish fully autonomous real-world robotic operation.
-
-The ongoing research aims to extend KNWM toward more general learning, perception, reasoning, and autonomous capability development.
+This research is still evolving, but it presents a promising direction for AI systems that need to reason and act with structured knowledge rather than only pattern-based text generation.
